@@ -1,8 +1,8 @@
 package com.sda.weather;
 
-public class EntryService {
+public class EntryService {     // todo rename to LocationService
 
-
+    // todo rename to createLocation
     public Entry createNewEntry(String city, Integer latitude, Integer longitude, String region, String country) {
         if (city == null) {
             throw new RuntimeException("City is required");
