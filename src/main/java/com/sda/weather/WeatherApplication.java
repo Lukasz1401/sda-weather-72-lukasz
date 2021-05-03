@@ -20,5 +20,12 @@ public class WeatherApplication {
                 .buildMetadata()
                 .buildSessionFactory();
 
+        LocationRepository locationRepository = new LocationRepositoryImpl(sessionFactory);
+        LocationService locationService = new LocationService(locationRepository);
+        LocationController locationController = new LocationController(locationService);
+
+        UserInterface userInterface = new UserInterface(locationController);
+        userInterface.runApplication();
+
     }
 }
